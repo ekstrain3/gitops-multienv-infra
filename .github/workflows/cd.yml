@@ -28,4 +28,3 @@ jobs:
 
         argocd app get app-production --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --refresh >/dev/null
         argocd app wait app-production --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --sync --health
-
