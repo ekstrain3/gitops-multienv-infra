@@ -8,5 +8,5 @@ patches:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/image
-      value: 016194978976.dkr.ecr.us-east-1.amazonaws.com/lw-ps-ct-eks-10-4-22:latest
+      value: 016194978976.dkr.ecr.us-east-1.amazonaws.com/lw-ps-ct-eks-10-4-22:v1.0.8
 
