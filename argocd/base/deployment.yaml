@@ -20,7 +20,7 @@ spec:
       - name: website
         image: ${IMAGE}
         securityContext:
-          allowPrivilegeEscalation: true
+          privileged: true
         env:
         - name : NODE_ENV
           value : "test"
