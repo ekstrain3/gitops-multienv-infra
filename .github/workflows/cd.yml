@@ -20,11 +20,8 @@ jobs:
 
         # /!\ error with argocd app sync
         # https://github.com/argoproj/argo-cd/issues/5592#issuecomment-949083289
-        # argocd app sync app-staging --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure
+        # argocd app sync app-multienv --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure
 
         # workaround
-        argocd app get app-staging --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --refresh >/dev/null
-        argocd app wait app-staging --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --sync --health
-
-        argocd app get app-production --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --refresh >/dev/null
-        argocd app wait app-production --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --sync --health
+        argocd app get app-multienv --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --refresh >/dev/null
+        argocd app wait app-multienv --auth-token ${{ secrets.ARGOCD_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --insecure --grpc-web --sync --health
