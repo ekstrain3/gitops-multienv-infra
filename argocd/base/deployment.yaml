@@ -19,8 +19,8 @@ spec:
       containers:
       - name: website
         image: ${IMAGE}
-        securityContext:
-          privileged: true
+#        securityContext:
+#          privileged: true
         env:
         - name : NODE_ENV
           value : "test"
